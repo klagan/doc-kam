@@ -20,4 +20,4 @@ If the Owner role on the subscription is inherited from the current management g
 
 To see what permissions you have in the Azure portal, select the management group and then select IAM. To learn more on RBAC Roles, see Manage access and permissions with RBAC.
 
-![Relationships-between-governance-objects-in-Azure](relationship.jpg)
+![Relationships-between-governance-objects-in-Azure](relationships.jpg)
