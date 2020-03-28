@@ -36,7 +36,7 @@ Install-Module -Name AzureAD.Standard.Preview
 Get-Module 
 ```
 
-[Sample](output.png)
+![Sample](output.png)
 
 ### How to install a powershell library
 
