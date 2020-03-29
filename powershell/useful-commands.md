@@ -13,6 +13,8 @@ Set-ExecutionPolicy Bypass -Scope Process
 
 `Write-Verbose` Write directly to the console, if $VerbosePreference set to Continue or Stop.
 
+`Write-Information` Uses the `$InformationPreference` flag to determine how to handle the message.  `Write-Host` is a wrapper for this call. [(source)](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-information?view=powershell-7#parameters)
+
 ### Test network connection
 
 ```
