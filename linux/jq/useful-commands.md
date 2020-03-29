@@ -22,7 +22,7 @@ Run `jq` against a variable: `jq '.' <<< <my-variable>`
     {
         "property" : "something else"
     }
-}
+]
 ```
 
 ```
