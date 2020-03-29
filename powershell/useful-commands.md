@@ -25,3 +25,11 @@ nc google.com -port 80
 ```
 gci env:* | sort-object name
 ```
+
+### Connect to Azure AD
+> [source](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/get-credential?view=powershell-7#examples)
+```
+PS> $User = "Domain01\User01"
+PS> $PWord = ConvertTo-SecureString -String "P@sSwOrd" -AsPlainText -Force
+PS> $Credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $User, $PWord
+```
