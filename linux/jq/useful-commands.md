@@ -89,3 +89,11 @@ jq '[.[] | {description: .description, displayName: .displayName, allowedMemberT
 ```azurecli
 jq '[.[] | {description: .description, displayName: .displayName, allowedMemberTypes: .allowedMemberTypes, id: .id, value: .value}] | unique_by(.value)' in3.json
 ```
+
+### Length of an array
+
+```
+jq length <file>
+
+jq length <<< $variable
+```
