@@ -45,3 +45,12 @@ In `Azure Powershell` task
 ```
  <your command> | Out-File -FilePath kam.txt
 ```
+
+### Formatting results
+
+This example *filters* the `$userRoles` list for items with a `ResourceDisplayName` of *my-resource* and then returns the results as a list with the specified properties
+
+```
+$userRoles | Where-Object {$_.ResourceDisplayName -eq 'my-resource'} | Format-List -Property ObjectId, ObjectType, CreationTimeStamp, Id, PrincipalDisplayName, PrincipalId, PrincipalType, ResourceId, ResourceDisplayName
+ 
+```
