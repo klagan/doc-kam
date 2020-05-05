@@ -46,3 +46,7 @@ This command will retrieve all application registrations ending in 'api'
 ```
 az ad app list --query "[?ends_with(displayName, 'api')].{displayName:displayName}" --all
 ```
+This command will retrieve all application registrations starting in 'developer' and ending in 'api'
+```
+az ad app list --query "[?starts_with(displayName, 'developer')].{displayName:displayName} | [?ends_with(displayName, 'api')]" --all
+```
