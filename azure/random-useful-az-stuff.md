@@ -41,3 +41,8 @@ This command queries all applications that have a `displayName` that `startswith
 ```
 az ad app list --query "[].{appId:appId, displayName:displayName}" --filter "startswith(displayName, 'my-app')"
 ```
+
+This command will retrieve all application registrations ending in 'api'
+```
+az ad app list --query "[?ends_with(displayName, 'api')].{displayName:displayName}" --all
+```
