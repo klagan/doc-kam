@@ -50,3 +50,7 @@ This command will retrieve all application registrations starting in 'developer'
 ```
 az ad app list --query "[?starts_with(displayName, 'developer')].{displayName:displayName} | [?ends_with(displayName, 'api')]" --all
 ```
+This command creates projections by prefixing 'kam' to the webapp name.
+```
+az webapp list --query "[].{name:join('-', ['kam', name])}"
+```
