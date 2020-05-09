@@ -51,6 +51,10 @@ jq '.[].property = "false"' input-1.json > output.json
 ```azurecli
 jq '.[] | select(.id != null)' file.json
 ```
+with quotes:
+```
+jq '.resources[] | select(.name=="my_api_appreg")'
+```
 
 ### Select items with unique `id`, `description`, `displayName` and `value` as a composite key from `file.json` and return the results as an array
 
