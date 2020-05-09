@@ -55,6 +55,10 @@ with quotes:
 ```
 jq '.resources[] | select(.name=="my_api_appreg")'
 ```
+using against a terraform state file:
+```
+terraform state pull | jq '.resources[] | select(.name=="my_api_appreg") | .instances[].attributes.app_role[] | select(.display_name=="Service Daemon") | .id'
+```
 
 ### Select items with unique `id`, `description`, `displayName` and `value` as a composite key from `file.json` and return the results as an array
 
