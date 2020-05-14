@@ -54,3 +54,7 @@ This command creates projections by prefixing 'kam' to the webapp name.
 ```
 az webapp list --query "[].{name:join('-', ['kam', name])}"
 ```
+This command finds applications with the pattern `testclient` in.
+```
+az ad app list --query "[?contains(displayName, 'testclient')].{appId:appId, displayName:displayName}" --all
+```
