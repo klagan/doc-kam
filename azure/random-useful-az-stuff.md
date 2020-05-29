@@ -56,5 +56,6 @@ az webapp list --query "[].{name:join('-', ['kam', name])}"
 ```
 This command finds applications with the pattern `testclient` in.
 ```
-az ad app list --query "[?contains(displayName, 'testclient')].{appId:appId, displayName:displayName}" --all
+searchTerm="testClient"
+az ad app list --query "[?contains(displayName, '${searchTerm}')].{appId:appId, displayName:displayName}" --all --output table
 ```
