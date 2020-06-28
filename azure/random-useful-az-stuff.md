@@ -56,5 +56,11 @@ az webapp list --query "[].{name:join('-', ['kam', name])}"
 ```
 This command finds applications with the pattern `testclient` in.
 ```
-az ad app list --query "[?contains(displayName, 'testclient')].{appId:appId, displayName:displayName}" --all
+searchTerm="testClient"
+az ad app list --query "[?contains(displayName, '${searchTerm}')].{appId:appId, displayName:displayName}" --all --output table
+```
+
+This command lists attributes of the databases in a specific resource group
+```
+az sql db list --resource-group my-group --server my-sqlserver --query "[].{databaseId:databaseId, name:name, skuTier:currentSku.tier, skuSize:currentSku.size, skuCapacity:currentSku.capacity, skuName:currentSku.name, skuFamily:currentSku.family}" --output table
 ```
