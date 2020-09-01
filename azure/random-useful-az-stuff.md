@@ -66,3 +66,27 @@ my_resource_group=my_group
 my_sqlserver=my_sqlserver
 az sql db list --resource-group $my_resource_group --server $my_sqlserver --query "[].{databaseId:databaseId, name:name, skuTier:currentSku.tier, skuSize:currentSku.size, skuCapacity:currentSku.capacity, skuName:currentSku.name, skuFamily:currentSku.family}" --output table
 ```
+
+This command lists attributes of the appservice plans
+
+```
+az appservice plan list --query "[].{resourceGroup:resourceGroup, name:name, location:location, skuTier:sku.tier, skuSize:sku.size, skuCapacity:sku.capacity, skuName:sku.name, skuFamily:sku.family}" --output table
+```
+
+This command list the service principals starting with 'sample'
+
+```
+az ad sp list --filter "startswith(displayName, 'sample')"
+```
+
+This command lists specific attributes of the service principals starting with 'sample'
+
+```
+az ad sp list --query "[].{id:appId, tenant:appOwnerTenantId, name: appDisplayName, appId: appId}" --filter "startswith(displayName, 'sample')"
+```
+
+This command lists specific attributes of the resources in a tab separated values list
+
+```
+az resource list --query "[].{Name:Name, ResourceGroup:ResourceGroup, Location:Location, Type:Type, Status:Status}" --output tsv
+```
