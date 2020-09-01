@@ -62,5 +62,7 @@ az ad app list --query "[?contains(displayName, '${searchTerm}')].{appId:appId, 
 
 This command lists attributes of the databases in a specific resource group
 ```
-az sql db list --resource-group my-group --server my-sqlserver --query "[].{databaseId:databaseId, name:name, skuTier:currentSku.tier, skuSize:currentSku.size, skuCapacity:currentSku.capacity, skuName:currentSku.name, skuFamily:currentSku.family}" --output table
+my_resource_group=my_group
+my_sqlserver=my_sqlserver
+az sql db list --resource-group $my_resource_group --server $my_sqlserver --query "[].{databaseId:databaseId, name:name, skuTier:currentSku.tier, skuSize:currentSku.size, skuCapacity:currentSku.capacity, skuName:currentSku.name, skuFamily:currentSku.family}" --output table
 ```
